@@ -20,7 +20,7 @@ st.markdown("""     <div style='background-color:white;padding:10px'>
 
 st.markdown("""<h4 style='color:green;'><b>Select The Race</b></h4>""", unsafe_allow_html=True)
 
-bars = ['World Population','World GDP']
+bars = ['World Population','Total Army Personal','World GDP','Expenditure on Army','Mobile Subscriptions']
 box = st.selectbox('',bars)
 
 but = st.button('Begin Race')
@@ -46,5 +46,41 @@ if but:
                         </ol>
                     """, unsafe_allow_html=True)
         video_file = open('gdp.mp4', 'rb')
+        video_bytes = video_file.read()
+        st.video(video_bytes)
+    
+    if box == 'Total Army Personal':
+        st.markdown("""
+                    <h4 style='color:black'>Features :</h4>
+                        <ol>
+                        <li>Top Ten Countries with largest Army </li>                        
+                        <li>From 1989 to 2017</li>
+                        </ol>
+                    """, unsafe_allow_html=True)
+        video_file = open('total_army.mp4', 'rb')
+        video_bytes = video_file.read()
+        st.video(video_bytes)
+      
+    if box == 'Expenditure on Army':
+        st.markdown("""
+                    <h4 style='color:black'>Features :</h4>
+                        <ol>
+                        <li>Top Ten Countries with highest Expenditure on Army/Forces </li>                        
+                        <li>From 1960 to 2018</li>
+                        </ol>
+                    """, unsafe_allow_html=True)
+        video_file = open('army_expenditure.mp4', 'rb')
+        video_bytes = video_file.read()
+        st.video(video_bytes)   
+        
+    if box == 'Mobile Subscriptions':
+        st.markdown("""
+                    <h4 style='color:black'>Features :</h4>
+                        <ol>
+                        <li>Top Ten Countries with highest Mobile Users </li>                        
+                        <li>From 1980 to 2018</li>
+                        </ol>
+                    """, unsafe_allow_html=True)
+        video_file = open('Subscriptions.mp4', 'rb')
         video_bytes = video_file.read()
         st.video(video_bytes)
